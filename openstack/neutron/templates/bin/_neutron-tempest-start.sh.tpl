@@ -4,8 +4,6 @@ set -xo pipefail
 
 function start_tempest_tests {
   
-  sleep 1d
-
   echo -e "\n === CONFIGURING TEMPEST === \n"
 
   # ensure rally db is present
@@ -24,7 +22,7 @@ function start_tempest_tests {
   rally --debug verify configure-verifier --extend /neutron-etc/tempest_extra_options
 
   # run the actual tempest tests for neutron
-  #echo -e "\n === STARTING TEMPEST TESTS FOR neutron === \n"
+  echo -e "\n === STARTING TEMPEST TESTS FOR neutron === \n"
   rally --debug verify start --concurrency 1 --detailed --pattern neutron_tempest_plugin.api --xfail-list /neutron-etc/tempest_expected_failures.yaml
 }
 
