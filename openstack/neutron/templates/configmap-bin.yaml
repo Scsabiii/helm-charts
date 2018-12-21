@@ -25,5 +25,5 @@ data:
 {{ include (print .Template.BasePath "/bin/_db-migrate.tpl") . | indent 4 }}
   common.sh: |
 {{ include "common.sh" .| indent 4 }}
-
-
+  neutron-tempest-start.sh: |
+{{ include (print .Template.BasePath "/bin/_neutron-tempest-start.sh.tpl") . | indent 4 }}
