@@ -336,4 +336,15 @@ nanny:
 tempest:
   imageTag: latest
   enabled: true
-  expected_failures: {}
+  skip_list: {
+    "neutron_tempest_plugin.api.admin.test_quotas_negative.QuotasAdminNegativeTestJSON.test_create_network_when_quotas_is_full" : "It's not allowed to create a project in tempest domain.",
+    "neutron_tempest_plugin.api.admin.test_quotas_negative.QuotasAdminNegativeTestJSON.test_create_floatingip_when_quotas_is_full" : "It's not allowed to create a project in tempest domain.",
+    "neutron_tempest_plugin.api.admin.test_quotas_negative.QuotasAdminNegativeTestJSON.test_create_security_group_when_quotas_is_full" : "It's not allowed to create a project in tempest domain.",
+    "neutron_tempest_plugin.api.admin.test_quotas_negative.QuotasAdminNegativeTestJSON.test_create_subnet_when_quotas_is_full" : "It's not allowed to create a project in tempest domain.",
+    "neutron_tempest_plugin.api.admin.test_quotas.QuotasTest.test_quotas" : "It's not allowed to create a project in tempest domain.",
+    "neutron_tempest_plugin.api.admin.test_quotas_negative.QuotasAdminNegativeTestJSON.test_create_router_when_quotas_is_full" : "It's not allowed to create a project in tempest domain.",
+    "neutron_tempest_plugin.api.admin.test_quotas_negative.QuotasAdminNegativeTestJSON.test_create_port_when_quotas_is_full" : "It's not allowed to create a project in tempest domain.",
+    "neutron_tempest_plugin.api.admin.test_quotas.QuotasTest.test_detail_quotas" : "It's not allowed to create a project in tempest domain.",
+    "neutron_tempest_plugin.api.admin.test_quotas_negative.QuotasAdminNegativeTestJSON.test_create_security_group_rule_when_quotas_is_full" : "It's not allowed to create a project in tempest domain."
+  }
+  expected_failures: { }
