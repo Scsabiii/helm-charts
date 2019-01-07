@@ -34,6 +34,9 @@ domain_specific_drivers = True
 project_tags = True
 application_credentials = True
 
+[network-feature-enabled]
+ipv6 = false
+
 [service_available]
 manila = False
 neutron = True

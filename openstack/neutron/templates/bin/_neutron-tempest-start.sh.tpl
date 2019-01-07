@@ -28,19 +28,21 @@ function start_tempest_tests {
 
 cleanup_tempest_leftovers() {
 
-  # grep all ports from Tempestuser 1 and put in a list
+  # Subnet CIDR pattern from tempest.conf: https://docs.openstack.org/tempest/latest/sampleconf.html
+
+  # grep all ports from Tempestuser 1 and put in a list, only IPv4
   export OS_USERNAME='tempestuser1'
   export OS_TENANT_NAME='tempest1'
   export OS_PROJECT_NAME='tempest1'
   openstack port list | grep "ip_address='10.100.0." | grep -E "ACTIVE|DOWN" | awk '{ print $2 }' >> /tmp/myList.txt
 
-  # grep all ports from Tempestuser 2 and put in a list
+  # grep all ports from Tempestuser 2 and put in a list, only IPv4
   export OS_USERNAME='tempestuser2'
   export OS_TENANT_NAME='tempest2'
   export OS_PROJECT_NAME='tempest2'  
   openstack port list | grep "ip_address='10.100.0." | grep -E "ACTIVE|DOWN" | awk '{ print $2 }' >> /tmp/myList.txt
 
-  # grep all ports from admin and put in a list
+  # grep all ports from admin and put in a list, only IPv4
   export OS_USERNAME='admin'
   export OS_TENANT_NAME='admin'
   export OS_PROJECT_NAME='admin'
