@@ -59,14 +59,14 @@ cleanup_tempest_leftovers() {
   export OS_TENANT_NAME='tempest1'
   export OS_PROJECT_NAME='tempest1'
   for network in $(openstack network list | grep -E "tempest|test|newnet|smoke-network" | awk '{ print $2 }'); do openstack network delete ${network}; done 
-  for router in $(openstack router list | grep -E "tempest|test" | awk '{ print $2 }'); do openstack router delete ${router}; done
+  for router in $(openstack router list | grep -E "tempest|test|abc" | awk '{ print $2 }'); do openstack router delete ${router}; done
 
   # Delete all networks and routers for Tempestuser 2
   export OS_USERNAME='tempestuser2'
   export OS_TENANT_NAME='tempest2'
   export OS_PROJECT_NAME='tempest2'
   for network in $(openstack network list | grep -E "tempest|test|newnet|smoke-network" | awk '{ print $2 }'); do openstack network delete ${network}; done 
-  for router in $(openstack router list | grep -E "tempest|test" | awk '{ print $2 }'); do openstack router delete ${router}; done
+  for router in $(openstack router list | grep -E "tempest|test|abc" | awk '{ print $2 }'); do openstack router delete ${router}; done
 
   # Delete all networks and routers for Admin
   export OS_USERNAME='admin'
