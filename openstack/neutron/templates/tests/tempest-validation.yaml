@@ -14,7 +14,6 @@ spec:
   containers:
     - name: neutron-tempest
       image: {{.Values.global.imageRegistry}}/{{.Values.global.image_namespace}}/neutron-tempest-plugin:{{.Values.tempest.imageTag}}
-      imagePullPolicy: IfNotPresent
       command:
         - /usr/local/bin/kubernetes-entrypoint
       env:
