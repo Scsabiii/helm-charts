@@ -30,6 +30,8 @@ cleanup_tempest_leftovers() {
 
   # Subnet CIDR pattern from tempest.conf: https://docs.openstack.org/tempest/latest/sampleconf.html
 
+  # Due to a clean up bug we need to clean up ourself the ports, networks and routers: https://bugs.launchpad.net/neutron/+bug/1759321
+
   # grep all ports from Tempestuser 1 and put in a list, only IPv4
   export OS_USERNAME='tempestuser1'
   export OS_TENANT_NAME='tempest1'
