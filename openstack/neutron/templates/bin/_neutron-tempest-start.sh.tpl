@@ -26,7 +26,7 @@ function start_tempest_tests {
   rally --debug verify start --concurrency 1 --detailed --pattern neutron_tempest_plugin.api --skip-list /neutron-etc/tempest_skip_list.yaml
 }
 
-cleanup_tempest_leftovers() {
+function cleanup_tempest_leftovers() {
 
   # Subnet CIDR pattern from tempest.conf: https://docs.openstack.org/tempest/latest/sampleconf.html
 
