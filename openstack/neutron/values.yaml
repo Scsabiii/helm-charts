@@ -336,5 +336,3 @@ nanny:
 tempest:
   imageTag: latest
   enabled: false
-  skip_list: 
-  expected_failures: 
